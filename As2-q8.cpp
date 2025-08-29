@@ -1,36 +1,35 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int countDistinct(int arr[], int n)
+{
+    int res = 1;
+
+    for (int i = 1; i < n; i++) {
+        int j = 0;
+        for (j = 0; j < i; j++)
+            if (arr[i] == arr[j])
+                break;
+
+        if (i == j)
+            res++;
+    }
+    return res;
+}
+
+int main()
+{
     int n;
     cout << "Enter size of array: ";
-    cin>>n;
+    cin >> n;
 
     int arr[n];
-
-    cout<<"enter "<<n<<" numbers: \n";
-    for(int i=0; i<n; i++){
-        cout<<i+1<<") ";
-        cin>>arr[i];
+    cout << "Enter " << n << " numbers:\n";
+    for (int i = 0; i < n; i++) {
+        cout << i + 1 << ") ";
+        cin >> arr[i];
     }
 
-    int count = 0;
-    int flag = 0;
-    //checking the condition
-    
-
-    for(int i = 0; i< n; i++){
-        flag = 0;
-        for(int j = 0; j<i; j++){
-            if(arr[i]==arr[j]){
-                flag = 1;
-                break;
-            }
-        }
-        if (flag == 0){
-            count++;
-        }
-    }
-
-    cout<<"number of distinct elements: "<<count<<endl;
+    cout << "Number of distinct elements: " << countDistinct(arr, n) << endl;
+    return 0;
 }
