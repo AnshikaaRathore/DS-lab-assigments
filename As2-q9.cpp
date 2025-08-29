@@ -1,6 +1,3 @@
-// C++ Program to count all pairs with difference equal to k
-// by generating all pairs
-
 #include <iostream>
 #include <vector>
 using namespace std;
