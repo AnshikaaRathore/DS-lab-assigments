@@ -4,7 +4,7 @@ using namespace std;
 int max_size = 100;
 
 
-//create function 
+/
 void create(int arr[], int &n) {
     
     cout << "\n-- CREATE ARRAY --"<<endl;
@@ -20,7 +20,7 @@ void create(int arr[], int &n) {
 }
 
 void Display(int arr[], int n){
-    cout<<"-- displaying array --"<<endl;
+    cout<<"displaying array"<<endl;
 
     for(int i=0; i<n; i++){
         cout<<"element - "<<i+1<<": "<<arr[i]<<endl;;
@@ -28,7 +28,7 @@ void Display(int arr[], int n){
 }
 
 void insert(int arr[], int& n){
-    cout<<"-- insert element at a given position --"<<endl;
+    cout<<" insert element at a given position"<<endl;
 
     int value; 
     cout<<"enter value to be inserted: ";
@@ -38,7 +38,7 @@ void insert(int arr[], int& n){
     cout<<"enter the index: ";
     cin>>index;
 
-    //shifiting elements for insertion
+   
     for(int i=n; i>index; i--){
         arr[i] = arr[i-1];
     }
@@ -66,8 +66,7 @@ void Delete(int arr[], int &n){
         cout << "num not found , so we are deleting last element"<<endl;
         pos = n-1;
     }
-    // cout<<"enter position to delete from";
-    // cin>> pos;
+    
 
     for (int i = pos; i<n-1; i++){
         arr[i]=arr[i+1];
