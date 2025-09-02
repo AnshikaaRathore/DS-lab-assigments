@@ -11,14 +11,13 @@ int main(){
         cout<<i+1<<") ";
         cin>>arr[i];
     }
-    cout<<"\n------------------------\n";
+    cout<<"\n";
 
-    // code for finding the duplicates:
-
+    
     for(int i=0; i<n; i++){
         for(int j=i+1; j<n; j++){
             if(arr[i]==arr[j]){
-                //we have to delete the arr[j] waala element
+               
                 
                 for(int k = j; k<n-1; k++){
                     arr[k] = arr[k+1];
@@ -29,7 +28,7 @@ int main(){
         }
     }
 
-    //displaying the array
+   
     for(int i =0; i<n; i++){
         cout<<i+1<<".) "<<arr[i]<<endl;
     }
