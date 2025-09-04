@@ -1,41 +1,50 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-int binarySearch(vector<int> &arr, int target, int low, int high) {
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
 
-        if (arr[mid] == target)
-            return mid; 
-        if (arr[mid] < target)
-            low = mid + 1; 
-            high = mid - 1; 
-    }
-    return -1; 
-}
+int main(){
+    int n;
+    int num;
+    cout<<"Enter size of array: ";
+    cin>>n;
+    cout<<"Enter number: ";
+    cin>>num;
+    int arr[n];
+    int index=-1;
 
-int main() {
-    int n, target;
+    bool found = false;
 
-    cout << "Enter the number of elements: ";
-    cin >> n;
-
-    vector<int> arr(n);
-    cout << "Enter " << n << " sorted elements: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+    
+    cout<<"\ninput the array: "<<endl;
+    for(int i = 0; i<n; i++){
+        cout<<i+1<<") ";
+        cin>>arr[i];
     }
 
-    cout << "Enter the element to search: ";
-    cin >> target;
+    int l = 0;
+    int r = n-1;
+    
+    while(l<=r){
+        int mid = (l+r)/2;
 
-    int index = binarySearch(arr, target, 0, n - 1);
+        if(num == arr[mid]){
+            found = true;
+            index = mid;
+            break;
+        }
+        else if(num < arr[mid]){
+            r = mid-1;
+        }
+        else{
+            l = mid+1;
+        }
+    }
+    
+    if(found == true){
+        cout<<"number found at "<<index+1<<endl;
+    }
+    else{
+        cout<<"The number isn't in the array"<<endl;
+    }
 
-    if (index != -1)
-        cout << "Element found at index " << index << endl;
-    else
-        cout << "Element not found" << endl;
-
-    return 0;
 }
