@@ -1,14 +1,20 @@
 #include <iostream>
-#include <algorithm>
+#include <string>
 using namespace std;
 
-int main() {
-    string str;
-    cout << "Enter a string: ";
-    getline(cin, str);
+int main(){
+    string str1;
+    cout<<"Enter a string: ";
+    getline(cin, str1);
 
-    reverse(str.begin(), str.end());
+    string str2;
+    
+    int len1 = str1.length();
+    str2.resize(len1);
 
-    cout << "Reversed string: " << str << endl;
-    return 0;
+    for(int i = 0; i<len1; i++){
+        str2[i] = str1[len1-1-i];
+    }
+
+    cout<<"the reversed string is: "<<str2;
 }
