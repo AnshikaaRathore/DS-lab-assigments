@@ -1,23 +1,25 @@
+//program to delete all the vowels from the string
 #include <iostream>
 #include <string>
 using namespace std;
 
-bool isVowel(char c) {
-    c = tolower(c);
-    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
-}
+int main(){
+    string str1;
+    cout<<"enter string: ";
+    getline(cin, str1);
+    
+    //checking for vowel and then deleteing and the starting again
+    for(int i = 0; i<str1.length(); i++){
+        char ch = tolower(str1[i]);
+        if(ch == 'a'||ch == 'e'|| ch=='i'||ch=='o'||ch=='u'){
+            for(int j =i; j<str1.length()-1; j++){
+                str1[j] = str1[j+1];
+            }
 
-int main() {
-    string str, result = "";
-    cout << "Enter a string: ";
-    getline(cin, str);
-
-    for (char c : str) {
-        if (!isVowel(c)) {
-            result += c;
+            str1.pop_back();//removing the last character after shifting
+            i--;//again checking after shifiting
         }
     }
 
-    cout << "String after deleting vowels: " << result << endl;
-    return 0;
+    cout<<"the string without vowels: "<<str1<<endl;
 }
