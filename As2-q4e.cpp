@@ -1,18 +1,15 @@
 #include <iostream>
-#include <cctype>
 using namespace std;
 
-int main() {
-    char ch;
-    cout << "Enter an uppercase character: ";
-    cin >> ch;
-
-    if (isupper(ch)) {
-        ch = tolower(ch);
-        cout << "Lowercase: " << ch << endl;
-    } else {
-        cout << "The character is not uppercase!" << endl;
+int main(){
+     string str1;
+    cout<<"enter string: ";
+    getline(cin, str1);
+    string result;
+    for(int i = 0; i<str1.length(); i++){
+        char ch = tolower(str1[i]);
+        result +=ch;
     }
+    cout<<"the lower case string is: "<<result<<endl;
 
-    return 0;
 }
